@@ -1,0 +1,16 @@
+import pytest
+import allure
+
+
+@pytest.fixture(scope="session")
+def login():
+    print("这是一个登陆账号")
+
+
+def test_demo(login):
+    print("我的测试用例")
+
+
+if __name__ == '__main__':
+    pytest.main(
+        ['-v', '-s', '-q', 'test_out.py', '--alluredir=C:/users/ms-032/PycharmProjects/api_auto_testing/Report'])
